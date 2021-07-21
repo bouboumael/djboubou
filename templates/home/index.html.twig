@@ -1,6 +1,8 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}{{ parent() }} - Présentation
+{% block title %}
+    {{ parent() }}
+    - Présentation
 {% endblock %}
 
 {% block body %}
@@ -8,15 +10,15 @@
         <main class="mt-5">
             <h1 class="mb-3">PrÉsentation</h1>
             <section class="d-flex flex-column flex-xl-row bg-white p-3 rounded shadow-sm">
-                <img class="rounded w-md-25 mb-3 mb-lg-0" src="https://lh3.googleusercontent.com/proxy/urZ8Ah2_P1bfEdPTNpWY2WRgcJIINZFl826-berRkkvqViOY_I3f5nmY3bUPSsWD_6tJOc0u9cyrNyyYrlxy8WSuczkbjcz7mdRmEzWsErlnLkYqfF-rmuJEVs8" alt="image platines">
+                <img class="rounded w-md-25 mb-3 mb-lg-0" src="{{ asset('build/images/platine-dj.jpg') }}" alt="image platines">
                 <p class="ms-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur similique magni iure natus neque nihil eveniet, corporis eligendi impedit! Nulla quas rem veritatis? Repudiandae soluta laboriosam ratione ipsum qui optio perspiciatis, voluptas ipsam magni ab, eaque fuga commodi assumenda voluptates. Tempore facere ut fugit in ab incidunt temporibus, alias doloribus rerum consectetur ratione ducimus asperiores dolore, laboriosam numquam, quis et impedit perspiciatis sed quos! Nemo consequatur iusto illum odio reiciendis eaque praesentium sequi dolores, perspiciatis repudiandae quae a alias, ratione incidunt velit dolore maxime quo culpa eos, quidem voluptate voluptatem voluptas omnis ab! Odio nisi atque dolor! Dolorum sapiente similique obcaecati delectus autem assumenda vero, excepturi aliquid unde officiis ex quae et tempora aperiam dolore?</p>
             </section>
             <section class="d-flex flex-column flex-xl-row bg-white p-3 rounded mt-3 shadow-sm">
                 <p class="me-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur similique magni iure natus neque nihil eveniet, corporis eligendi impedit! Nulla quas rem veritatis? Repudiandae soluta laboriosam ratione ipsum qui optio perspiciatis, voluptas ipsam magni ab, eaque fuga commodi assumenda voluptates. Tempore facere ut fugit in ab incidunt temporibus, alias doloribus rerum consectetur ratione ducimus asperiores dolore, laboriosam numquam, quis et impedit perspiciatis sed quos! Nemo consequatur iusto illum odio reiciendis eaque praesentium sequi dolores, perspiciatis repudiandae quae a alias, ratione incidunt velit dolore maxime quo culpa eos, quidem voluptate voluptatem voluptas omnis ab! Odio nisi atque dolor! Dolorum sapiente similique obcaecati delectus autem assumenda vero, excepturi aliquid unde officiis ex quae et tempora aperiam dolore?</p>
-                <img class="rounded w-md-25 mb-3 mb-lg-0" src="https://mgl.skyrock.net/big.77988157.jpg?43389405" alt="image platines">
+                <img class="rounded w-md-25 mb-3 mb-lg-0" src="{{ asset('build/images/old-dj.jpg') }}" alt="old dj">
             </section>
             <section class="d-flex flex-column flex-xl-row bg-white p-3 rounded mt-3 shadow-sm">
-                <img class="rounded w-md-25 mb-3 mb-lg-0" src="https://st.depositphotos.com/1026550/4167/i/600/depositphotos_41679805-stock-photo-dj-silhouette.jpg" alt="image platines">
+                <img class="rounded w-md-25 mb-3 mb-lg-0" src="{{ asset('build/images/dj.jpg') }}" alt="dj">
                 <p class="ms-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur similique magni iure natus neque nihil eveniet, corporis eligendi impedit! Nulla quas rem veritatis? Repudiandae soluta laboriosam ratione ipsum qui optio perspiciatis, voluptas ipsam magni ab, eaque fuga commodi assumenda voluptates. Tempore facere ut fugit in ab incidunt temporibus, alias doloribus rerum consectetur ratione ducimus asperiores dolore, laboriosam numquam, quis et impedit perspiciatis sed quos! Nemo consequatur iusto illum odio reiciendis eaque praesentium sequi dolores, perspiciatis repudiandae quae a alias, ratione incidunt velit dolore maxime quo culpa eos, quidem voluptate voluptatem voluptas omnis ab! Odio nisi atque dolor! Dolorum sapiente similique obcaecati delectus autem assumenda vero, excepturi aliquid unde officiis ex quae et tempora aperiam dolore?</p>
             </section>
         </main>
