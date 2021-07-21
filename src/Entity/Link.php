@@ -32,11 +32,6 @@ class Link
      */
     private $description;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $mediaType;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -78,15 +73,4 @@ class Link
         return $this;
     }
 
-    public function getMediaType(): ?string
-    {
-        return $this->mediaType;
-    }
-
-    public function setMediaType(string $mediaType): self
-    {
-        $this->mediaType = $mediaType;
-
-        return $this;
-    }
 }
