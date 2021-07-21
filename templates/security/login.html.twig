@@ -1,6 +1,8 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ parent() }} - Connexion
+{% block title %}
+    {{ parent() }}
+    - Connexion
 {% endblock %}
 
 {% block body %}
@@ -9,36 +11,37 @@
             <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
         {% endif %}
 
-        {% if app.user %}
-            <div class="mb-3">
-                Vous êtes connecté en tant que
-                {{ app.user.username }},
-                <a href="{{ path('app_logout') }}">Déconnexion</a>
-            </div>
-        {% endif %}
-
-        <div class="container mt-5 p-5 w-25 bg-white rounded-3 shadow">
-            <h1 class="h3 mb-3 font-weight-normal">Connectez-vous</h1>
-            <label for="inputEmail">Email</label>
+        <div class="container mt-5 p-5 w-25 bg-primary rounded-3 shadow-lg box-login">
+            <h1 class="h3 mb-4 font-weight-normal text-light fs-2">Connectez-vous</h1>
+            <label for="inputEmail" class="text-light fs-4">Email</label>
             <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control mb-3" autocomplete="email" required autofocus>
-            <label for="inputPassword">Password</label>
+            <label for="inputPassword" class="text-light fs-4">Mot de passe</label>
             <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
 
             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-            <button class="btn btn-lg btn-secondary text-dark mt-3" type="submit">
+            <button class="btn btn-lg btn-secondary text-dark mt-4" type="submit">
                 Connexion
             </button>
+
+            {% if app.user %}
+                <div class="mt-4 text-light d-flex flex-column">
+                    Vous êtes connecté en tant que
+                    {{ app.user.username }},
+                    <a href="{{ path('home') }}" class="text-secondary">Retour</a>
+                    <a href="{{ path('app_logout') }}" class="text-secondary">Déconnexion</a>
+                </div>
+            {% endif %}
         </div>
 
         {#
-                        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-                        See https://symfony.com/doc/current/security/remember_me.html
-                        <div class="checkbox mb-3">
-                            <label>
-                                <input type="checkbox" name="_remember_me"> Remember me
-                            </label>
-                        </div>
-                    #}
+                                        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                                        See https://symfony.com/doc/current/security/remember_me.html
+                                        <div class="checkbox mb-3">
+                                            <label>
+                                                <input type="checkbox" name="_remember_me"> Remember me
+                                            </label>
+                                        </div>
+                                    #}
 
     </form>
 {% endblock %}
