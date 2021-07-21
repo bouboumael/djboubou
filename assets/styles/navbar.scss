@@ -1,0 +1,9 @@
+@import 'variables';
+
+.navbar {
+    a {
+        &:hover {
+            color: $secondary !important;
+        }
+    }
+}
