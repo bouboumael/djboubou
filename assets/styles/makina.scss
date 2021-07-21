@@ -1,9 +1,17 @@
 .card {
     max-height: 500px;
     min-height: 500px;
+    transition: transform .2s ease-in;
+    z-index: 0;
+
 
     iframe {
         min-height: 200px;
         max-height: 200px;
+    }
+
+    &:hover {
+        transform: scale(1.05, 1.05) ;
+        z-index: 1;
     }
 }
