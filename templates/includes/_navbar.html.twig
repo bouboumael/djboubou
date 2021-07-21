@@ -1,14 +1,19 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
     <div class="container-fluid">
         <a class="navbar-brand h1 fs-1 logo" href="{{ path('home') }}">Djboubou</a>
+        {% if is_granted('ROLE_ADMIN') %}
+            <div class="admin me-5 d-flex">
+                <a class="nav-link text-light" href="{{ path('admin') }}">
+                    <i class="fas fa-user-cog text-warning me-2 fs-4"></i>Admin</a>
+                <a class="nav-link text-light" href="{{ path('app_logout') }}">
+                    <i class="fas fa-sign-out-alt text-warning me-2 fs-4"></i>Déconnexion</a>
+            </div>
+        {% endif %}
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                {% if is_granted('ROLE_ADMIN') %}
-                    <a class="nav-link text-light" href="#"><i class="fas fa-user-cog text-warning me-2 fs-4"></i>Admin</a>
-                {% endif %}
                 <a class="nav-link text-light" href="{{ path('home') }}">Présentation</a>
                 <a class="nav-link text-light" href="{{ path('makina_index') }}">Makina</a>
                 <a class="nav-link text-light" href="#">Mes Vinyls</a>
