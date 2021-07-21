@@ -1,0 +1,14 @@
+@import 'variables';
+
+footer {
+    min-height: 19.5vh;
+
+    @media screen and (max-width: 768px) and (min-width: 400px) {
+        min-height: 21.8vh;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+}
