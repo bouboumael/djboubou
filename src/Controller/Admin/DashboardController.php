@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Contact;
 use App\Entity\Link;
 use App\Entity\User;
+use App\Entity\Vinyl;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
@@ -32,11 +33,11 @@ class DashboardController extends AbstractDashboardController
     }
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::section('Contenu');
-        yield MenuItem::linkToCrud('Vidéo', 'fab fa-youtube', Link::class);
+        yield MenuItem::linkToCrud('Vidéos', 'fab fa-youtube', Link::class);
+        yield MenuItem::linkToCrud('Vinyls', 'fas fa-record-vinyl', Vinyl::class);
         yield MenuItem::section('Messages');
-        yield MenuItem::linkToCrud('Message', 'fas fa-envelope-open-text', Contact::class);
+        yield MenuItem::linkToCrud('Messages', 'fas fa-envelope-open-text', Contact::class);
         yield MenuItem::section('Action');
         yield MenuItem::linkToLogout('Déconnexion', 'fas fa-sign-out-alt');
     }

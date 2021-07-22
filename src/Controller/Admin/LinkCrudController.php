@@ -31,6 +31,6 @@ class LinkCrudController extends AbstractCrudController
             // the labels used to refer to this entity in titles, buttons, etc.
             ->setEntityLabelInSingular('Vidéo')
             ->setEntityLabelInPlural('Vidéos')
-            ->setPageTitle('index', 'DjBouBou - %entity_label_plural%');
+            ->setPageTitle('index', 'DjBouBou Admin - %entity_label_plural%');
     }
 }

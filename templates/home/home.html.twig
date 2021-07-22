@@ -1,0 +1,22 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('home') }}
+{% endblock %}
+
+{% block title %}
+    {{ parent() }}
+    - accueil
+{% endblock %}
+
+{% block navbar %}{% endblock %}
+
+{% block body %}
+    <main class="mt-5">
+        <a class="d-flex justify-content-center" href="{{ path('presentation') }}" id="logo"><img src="{{ asset('build/images/logo.png') }}" alt="logo"></a>
+        <h1 class="text-center fs-1">Bienvenue</h1>
+    </main>
+{% endblock %}
+
+{% block footer %}{% endblock %}
