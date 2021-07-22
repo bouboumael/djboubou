@@ -1,0 +1,27 @@
+{% extends 'layout.html.twig' %}
+
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('contact') }}
+{% endblock %}
+
+{% block body %}
+    <main class="mt-5">
+        <div class="container py-1 col-12 col-md-8 col-lg-6 contact">
+            {% for label, messages in app.flashes %}
+                {% for message in messages %}
+                    <div class="alert-{{ label }} p-2">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+            <h1 class="mt-5 mb-3">Contactez moi</h1>
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button class="btn btn-secondary text-dark align-self-end mb-3 fw-bolder">Envoyer</button>
+            {{ form_end(form) }}
+        </div>
+    </main>
+{% endblock %}

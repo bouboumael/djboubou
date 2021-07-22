@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Contact;
 use App\Entity\Link;
 use App\Entity\User;
 use Symfony\Component\HttpFoundation\Response;
@@ -29,12 +30,13 @@ class DashboardController extends AbstractDashboardController
         return Dashboard::new()
             ->setTitle('<a href="/">Djboubou</a>');
     }
-
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::section('Contenu');
         yield MenuItem::linkToCrud('Vidéo', 'fab fa-youtube', Link::class);
+        yield MenuItem::section('Messages');
+        yield MenuItem::linkToCrud('Message', 'fas fa-envelope-open-text', Contact::class);
         yield MenuItem::section('Action');
         yield MenuItem::linkToLogout('Déconnexion', 'fas fa-sign-out-alt');
     }

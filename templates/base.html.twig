@@ -4,10 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>
-            {% block title %}DjBouBou{% endblock %}
+            {% block title %}DjBouBou
+            {% endblock %}
         </title>
         {# Run `composer require symfony/webpack-encore-bundle`
-                   and uncomment the following Encore helpers to start using Symfony UX #}
+                                   and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
@@ -18,7 +19,9 @@
     </head>
     <body>
         {% block navbar %}{% endblock %}
-        {% block body %}{% endblock %}
+        <div class="container pt-5">
+            {% block body %}{% endblock %}
+        </div>
         {% block footer %}{% endblock %}
-    </body>
-</html>
+        </body>
+    </html>
