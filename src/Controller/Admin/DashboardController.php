@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Category;
 use App\Entity\Contact;
 use App\Entity\Link;
 use App\Entity\User;
@@ -29,13 +30,15 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('<a href="/">Djboubou</a>');
+            ->setTitle('<a href="/présentation">Djboubou</a>');
     }
     public function configureMenuItems(): iterable
     {
         yield MenuItem::section('Contenu');
         yield MenuItem::linkToCrud('Vidéos', 'fab fa-youtube', Link::class);
         yield MenuItem::linkToCrud('Vinyls', 'fas fa-record-vinyl', Vinyl::class);
+        yield MenuItem::section('Définitions');
+        yield MenuItem::linkToCrud('Catégories', 'fas fa-folder-open', Category::class);
         yield MenuItem::section('Messages');
         yield MenuItem::linkToCrud('Messages', 'fas fa-envelope-open-text', Contact::class);
         yield MenuItem::section('Action');
