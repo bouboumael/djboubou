@@ -30,7 +30,7 @@ class Vinyl
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $image;
+    private $image = '';
 
     /**
      * @Vich\UploadableField(mapping="vinyl", fileNameProperty="image")
@@ -61,6 +61,12 @@ class Vinyl
      * @ORM\Column(type="datetime_immutable", nullable=true)
      */
     private $updatedAt;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="vinyls")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $category;
 
     public function __construct()
     {
@@ -142,6 +148,18 @@ class Vinyl
     public function setUpdatedAt(?DateTimeImmutable $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }
