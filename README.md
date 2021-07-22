@@ -14,12 +14,24 @@ Djboubou is a fake site of the best Dj :)
 * [MySQL 8.0.*](https://www.mysql.com/fr/) (check by running mysql --version in your console)
 * [Git 2.*](https://git-scm.com/) (check by running git --version in your console)
 
+
+## Installation
+If you meet the prerequisites, you can proceed to the installation of the project 
+
+1. Clone the project from [Github](https://github.com/bouboumael/djboubou)
+2. Go in the project folder
+3. Open with your code editor
+4. Run `composer install` to install PHP dependencies
+5. Run `yarn install` to install JS dependencies
+6. Copy the `.env` file and fill all informations (Database)
+7. Run `symfony console doctrine:database:create` to create database
+8. Run `symfony console doctrine:migration:migrate` to create structure of database
+9. No Fixtures. Datas in the migration.
+10. Run `yarn encore dev` to build assets
+11. Run `symfony server:start` to launch symfony server
+12. Go to localhost:8000 on your browser
 ## Users
-
-Admin user:
-login: wildjobexchangeAdmin@gmail.com
-password: admin123456789
-
-SuperAdmin User:
-login: wildjobexchangeSuperAdmin@gmail.com
-password: admin123456789
+* route => /admin
+* Admin user:
+* login: djboubou@thebest.fr
+* password: admin
