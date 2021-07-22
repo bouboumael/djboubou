@@ -20,8 +20,8 @@ class ContactCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('lastname'),
-            TextField::new('firstname'),
+            TextField::new('lastname', 'Nom'),
+            TextField::new('firstname', 'prénom'),
             TextField::new('email'),
             TextEditorField::new('message'),
         ];
