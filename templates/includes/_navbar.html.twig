@@ -1,16 +1,24 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <div class="container-fluid">
-    <a class="navbar-brand h1 logo" href="{{ path('home') }}">Djboubou</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link" href="#">Présentation</a>
-        <a class="nav-link" href="#">Makina</a>
-        <a class="nav-link" href="#">Mes Vinyls</a>
-        <a class="nav-link" href="#">Contact</a>
-      </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand h1 fs-1 logo" href="{{ path('home') }}">Djboubou</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                {% if is_granted('ROLE_ADMIN') %}
+                    <div class="admin me-5 d-flex flex-column flex-lg-row">
+                        <a class="nav-link text-light" href="{{ path('admin') }}">
+                            <i class="fas fa-user-cog text-warning me-2 fs-4"></i>Admin</a>
+                        <a class="nav-link text-light" href="{{ path('app_logout') }}">
+                            <i class="fas fa-sign-out-alt text-warning me-2 fs-4"></i>Déconnexion</a>
+                    </div>
+                {% endif %}
+                <a class="nav-link text-light" href="{{ path('presentation') }}">Présentation</a>
+                <a class="nav-link text-light" href="{{ path('makina_index') }}">Makina</a>
+                <a class="nav-link text-light" href="{{ path('vinyl_index') }}">Mes Vinyls</a>
+                <a class="nav-link text-light" href="{{ path('contact') }}">Contact</a>
+            </div>
+        </div>
     </div>
-  </div>
 </nav>

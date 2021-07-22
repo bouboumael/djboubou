@@ -1,0 +1,28 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('vinyls') }}
+{% endblock %}
+
+{% block title %}
+    {{ parent() }}
+    - Mes vinyls
+{% endblock %}
+
+{% block body %}
+    <main>
+        <h1 class="mt-5 mb-3">Détails</h1>
+        <div class="d-flex justify-content-center">
+            <div class="card shadow col-xl-7 col-lg-8 col-md-10 col-12 p-2">
+                <img src="{{ vich_uploader_asset(vinyl, 'imageFile') }}" class="card-img-top pochette-show" alt="{{ vinyl.title }}">
+                <div class="card-body bg-white">
+                    <h5 class="card-title text-center">Titre: {{ vinyl.title }}</h5>
+                    <p class="card-text text-center">Dj(s): {{ vinyl.author }}</p>
+                    <p class="card-text text-center text-secondary fw-bolder text-secondary">Catégorie: {{ vinyl.category.name }}</p>
+                    <a href="{{ path('vinyl_index') }}" class="btn btn-primary col-12 mt-2">Retour</a>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

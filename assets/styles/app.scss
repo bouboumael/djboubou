@@ -12,8 +12,17 @@ body {
     background-color: $light;
 }
 
+
+main {
+    min-height: 55vh;
+}
+
 h1,
 h2 {
     font-family: 'shockwave', sans-serif;
     letter-spacing: $spacing;
+}
+
+h2 {
+    font-size: $h2-size;
 }
