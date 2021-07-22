@@ -26,7 +26,7 @@
                 <div class="card shadow mb-2 col-xl-3 col-lg-4 col-md-6 col-12 p-2">
                     <img src="{{ vich_uploader_asset(vinyl, 'imageFile') }}" class="card-img-top pochette" alt="{{ vinyl.title }}">
                     <div class="card-body bg-white">
-                        <h5 class="card-title text-center">{{ vinyl.title }}</h5>
+                        <h5 class="card-title text-center fw-bolder">{{ vinyl.title }}</h5>
                         <a href="{{ path('vinyl_show', {title: vinyl.title}) }}" class="btn btn-primary col-12 mt-2">Détails</a>
                     </div>
                 </div>
